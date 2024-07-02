@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/v4/:path*",
+      "destination": "http://api.football-data.org/v4/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/v4/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,X-Auth-Token" },
+        { "key": "Access-Control-Expose-Headers", "value": "Content-Length,Content-Range" }
+      ]
+    }
+  ]
+}
